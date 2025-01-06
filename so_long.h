@@ -46,12 +46,39 @@ typedef struct s_map
 	int		player_x;
 }				t_map;
 
-//struct for image data
+typedef struct s_rectangle
+{
+	int	x_start;
+	int	y_start;
+	int width;
+	int height;
+}				t_rectangle;
+
+typedef struct s_text
+{
+	char	*label;
+	char	*value;
+	int			x_start;
+	int			y_start;
+}				t_text;
+
 typedef struct s_data_img
 {
 	char	*addr;
 	void	*img;
 }				t_data_img;
+
+typedef struct temp_values //gambiarras i know and i sorry
+{
+	int		enemy_x;
+	int		enemy_y;
+}				t_tempvalues;
+
+typedef struct	temp
+{
+	int	new_y;
+	int	new_x;
+}				t_temp;
 
 typedef struct s_animation
 {
@@ -109,6 +136,7 @@ typedef struct s_data
 	int			game_won;
 	int			game_over;
 	t_map		map;
+	t_temp		temp; //gambiarra
 	t_data_img	image;
 	t_tiles		tiles;
 	t_enemy		enemies[MAX_ENEMIES];
@@ -148,32 +176,36 @@ void	render_tiles(t_data *data);
 void	clean_tiles(t_data *data);
 
 //player_management.c
-void	init_animation(t_animation *animation, void *mlx, char *base_path,
+void	init_animation(t_animation *animation, char *base_path,
 			int frame_count, t_data *data);
 void	init_player(t_data *data);
 void	update_player_animation(t_data *data);
 int		animate_player(t_data *data);
 void	handle_player_state(t_data *data, char new_state);
+//player_management_helper.c
 void	clean_animation(t_animation *animation, void *mlx);
 void	clean_player(t_data *data);
 
 //player_mechanics.c
 int		handle_keypress(int keycode, t_data *data);
-int		handle_keyrelease(int keycode, t_data *data);
-void	draw_tile(t_data *data, int x, int y);
-int		is_valid_move(t_data *data, int new_x, int new_y);
+void	attempt_move(t_data *data, int keycode, int new_x, int new_y);
 void	move_player(t_data *data, int keycode);
-void	open_exit(t_data *data);
-void	render_move_count(t_data *data);
+int		is_valid_move(t_data *data, int new_x, int new_y);
+void	draw_tile(t_data *data, int x, int y);
+//player_mechanics_helper.c
+int		handle_keyrelease(int keycode, t_data *data);
 void	check_collision(t_data *data);
-void	render_move_count(t_data *data);
+void	open_exit(t_data *data);
 void	win_game(t_data *data);
+//player_mechanics_helper2.c
+void	render_move_count(t_data *data);
 
 //enemies_mechanics.c
 void	update_enemies_movement(t_data *data);
-void	move_enemy(t_data *data, t_enemy *enemy);
 void	game_over(t_data *data);
 void	check_player_enemy_collision(t_data *data);
+//enemies_mechanics_helper.c
+void	move_enemy(t_data *data, t_enemy *enemy);
 
 //enemies_management.c 1/2
 void	load_enemy_animation(t_data *data, t_animation *anim,
