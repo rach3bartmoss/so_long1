@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_validation.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/05 19:52:39 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/06 00:55:34 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libraries/libft/libft.h"
 #include "so_long.h"
 
@@ -88,12 +100,12 @@ int	validate_map(t_data *data)
 	if (data->map.collectibles == 0 || data->map.exit_count != 1
 		|| data->map.player_count != 1)
 	{
-		ft_printf("Error: map require 1 collectible, 1 exit and 1 player\n");
+		ft_printf("Error: map must have 1>= collectible, 1 exit and 1 player\n");
 		return (0);
 	}
 	if (!validate_map_path(data))
 	{
-		ft_printf("Error: Not all collectibles or the exit are reachable.\n");
+		ft_printf("Error: Collectibles or the exit are not reachable.\n");
 		return (0);
 	}
 	return (1);
