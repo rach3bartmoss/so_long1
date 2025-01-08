@@ -1,14 +1,11 @@
-  The so_long project is part of 42school curriculum, this project aims to introduce the student in concepts and techniques in game-design, the subject requires
-the program to follow certain rules, such as:
+  The so_long project is part of the 42school curriculum. This project aims to introduce the student in concepts and techniques in game design. The subject requires the program to follow certain rules, such as:
 
-  - Limitations in which library functions you can use (mandatory part), it means any function not allowed you have to code youself if you really needed, or pursue
-    different approaches to resolve the problem.
+  - Limitations on library functions: For the mandatory part, it means any function not allowed in the subject you must code yourself if you really needed them, or pursue different approaches to solve the problem.
   - The use of MiniLibX to render images and windows.
-  - Be a 2D view game (top-down or profile).
-  - And other shennennigans..
+  - 2D view game (top-down or profile).
+  - And other shenanigans..
 
-  The great and maybe more pendatic aspect of the game is that the program must be able to receive as argument the map in the format of a .ber file (map1.ber)
-so any user can make your own map! since it follow certain rules of course, the main are:
+  The great and perhaps more pendatic aspect of the game is that the program must be able to receive as argument the map in the format of a .ber file (e.g., map1.ber) so any user can make your own map! since it follow certain rules of course, the main are:
 
   - The map must be composed of only 5 characters:
     0 for empty space;
@@ -28,7 +25,7 @@ so any user can make your own map! since it follow certain rules of course, the 
 a DFS (Depth-First Search algorithm) using a flood-fill implementation of it. More details google it. The program must have some other safety and map validation
 checks that are not worth mention.
 
-  Skipping to the bonus part, the project propose the student to add some sprite animations to the game, and enemy patrols GWAAAA, and a count of players movement
+  Skipping to the bonus part, the project propose the student to add some sprite animations to the game, and enemy patrols 🦅🦅GWAAAA🦅🦅, and a count of players movement
 directly on the screen instead of shell.
 
 To run the project you must first install the following packages
