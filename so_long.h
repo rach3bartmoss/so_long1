@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/08 22:46:49 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/08 22:47:18 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include <mlx.h>
@@ -28,8 +40,6 @@
 
 # define KEYPRESS 2
 # define KEYRELEASE 3
-# define KEYPRESSMASK (1L<<0)
-# define KEYRELEASEMASK (1L<<1)
 
 typedef struct s_map
 {
@@ -50,14 +60,14 @@ typedef struct s_rectangle
 {
 	int	x_start;
 	int	y_start;
-	int width;
-	int height;
+	int	width;
+	int	height;
 }				t_rectangle;
 
 typedef struct s_text
 {
-	char	*label;
-	char	*value;
+	char		*label;
+	char		*value;
 	int			x_start;
 	int			y_start;
 }				t_text;
@@ -74,7 +84,7 @@ typedef struct temp_values //gambiarras i know and i sorry
 	int		enemy_y;
 }				t_tempvalues;
 
-typedef struct	temp
+typedef struct temp
 {
 	int	new_y;
 	int	new_x;
@@ -218,6 +228,10 @@ void	update_enemy_animation(t_data *data);
 //enemies_management_helper.c 2/2
 int		animate_enemies(t_data *data);
 void	clean_enemies(t_data *data);
-void	initialize_enemies_helper(t_data *data, int *x, int *y, int *enemy_index);
+void	initialize_enemies_helper(t_data *data, int *x,
+			int *y, int *enemy_index);
+
+void	print_error_and_exit(char *error_msg, t_data *data);
+void	print_element_errors(t_data *data);
 
 #endif

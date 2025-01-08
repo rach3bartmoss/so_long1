@@ -13,6 +13,9 @@ SOURCES = main.c clean_close.c ft_init.c map_loading.c \
 			player_management.c player_mechanics.c \
 			enemies_management.c enemies_mechanics.c \
 			enemies_management_helper.c dfs_path_validation.c \
+			player_management_helper.c player_mechanics_helper.c \
+			player_mechanics_helper2.c enemies_mechanics_helper.c\
+			errors_messages.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 CC = gcc

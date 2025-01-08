@@ -69,8 +69,8 @@ int	main(int argc, char **argv)
 	if (!data.mlx || !data.win)
 		return (clean_exit(&data));
 	mlx_loop_hook(data.mlx, game_loop, &data);
-	mlx_hook(data.win, KEYPRESS, KEYPRESSMASK, handle_keypress, &data);
-	mlx_hook(data.win, KEYRELEASE, KEYRELEASEMASK, handle_keyrelease, &data);
+	mlx_hook(data.win, KEYPRESS, 1L << 0, handle_keypress, &data);
+	mlx_hook(data.win, KEYRELEASE, 1L << 1, handle_keyrelease, &data);
 	mlx_hook(data.win, X_EVENT_EXIT, 0, close_window_x_event, &data);
 	mlx_key_hook(data.win, key_exit_handler, &data);
 	mlx_loop(data.mlx);

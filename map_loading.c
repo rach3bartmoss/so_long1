@@ -17,9 +17,17 @@ int	process_map_line(t_data *data, char *line)
 {
 	if (data->map.height == 0)
 		data->map.width = ft_strlen(line);
-	else if ((int)ft_strlen(line) != data->map.width)
+	else if ((int)ft_strlen(line) != data->map.width
+		&& (int)ft_strlen(line) != 0)
 	{
-		free(line);
+		ft_printf("Error:\nLine length are uneven at line %d.\n",
+			data->map.height + 1);
+		return (0);
+	}
+	if (ft_strlen(line) == 0)
+	{
+		ft_printf("Error: Empty line encountered at line %d.\n",
+			data->map.height + 1);
 		return (0);
 	}
 	data->map.height++;
@@ -45,7 +53,11 @@ int	read_map_dimensions(t_data *data, char *filename)
 		if (line[ft_strlen(line) - 1] == '\n')
 			line[ft_strlen(line) - 1] = '\0';
 		if (!process_map_line(data, line))
-			return (close(fd));
+		{
+			free(line);
+			close(fd);
+			clean_exit(data);
+		}
 		free(line);
 	}
 	close(fd);
@@ -70,7 +82,7 @@ int	init_map_memory(t_data *data)
 
 int	cleanup_and_close(t_data *data, int fd)
 {
-	cleanup_map(data);
+	clean_exit(data);
 	return (close(fd));
 }
 

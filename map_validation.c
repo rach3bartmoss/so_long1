@@ -34,7 +34,7 @@ int	check_map_borders(t_data *data)
 					|| x == 0 || x == data->map.width - 1)
 				&& data->map.grid[y][x] != '1')
 			{
-				ft_printf("Error: Map must be surrounded by walls('1')\n");
+				ft_printf("Error:\n Map must be surrounded by walls!\n");
 				return (0);
 			}
 			x++;
@@ -47,11 +47,11 @@ int	check_map_borders(t_data *data)
 //inits
 void	init_map_elements(t_data *data, char c, int y, int x)
 {
-	if (c == 'C')
+	if (ft_toupper(c) == 'C')
 		data->map.collectibles++;
-	else if (c == 'E')
+	else if (ft_toupper(c) == 'E')
 		data->map.exit_count++;
-	else if (c == 'P')
+	else if (ft_toupper(c) == 'P')
 	{
 		data->map.player_count++;
 		if (data->map.player_count <= 2)
@@ -60,7 +60,7 @@ void	init_map_elements(t_data *data, char c, int y, int x)
 			data->map.player_y = y;
 		}
 	}
-	else if (c == 'F')
+	else if (ft_toupper(c) == 'F')
 	{
 		data->map.enemy_count++;
 	}
@@ -83,8 +83,9 @@ int	count_map_elements(t_data *data)
 		while (x < data->map.width)
 		{
 			c = data->map.grid[y][x];
-			if (!validate_map_chars(c))
-				return (0);
+			if (!validate_map_chars(ft_toupper(c)))
+				return (ft_printf("Error:\nInvalid character at map[%d][%d]\n",
+						(y + 1), (x + 1)));
 			init_map_elements(data, c, y, x);
 			x++;
 		}
@@ -100,12 +101,17 @@ int	validate_map(t_data *data)
 	if (data->map.collectibles == 0 || data->map.exit_count != 1
 		|| data->map.player_count != 1)
 	{
-		ft_printf("Error: map must have 1>= collectible, 1 exit and 1 player\n");
+		print_element_errors(data);
 		return (0);
 	}
 	if (!validate_map_path(data))
 	{
-		ft_printf("Error: Collectibles or the exit are not reachable.\n");
+		ft_printf("Error\n: Map doesn't have a valid path.\n");
+		return (0);
+	}
+	if (data->map.width == data->map.height)
+	{
+		ft_printf("Error:\nMap are not in a rectangular format\n");
 		return (0);
 	}
 	return (1);
