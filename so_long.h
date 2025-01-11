@@ -12,7 +12,7 @@
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include <mlx.h>
+# include "mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
@@ -21,7 +21,7 @@
 # include <time.h>
 # include <talloc.h>
 # include "libraries/libft/libft.h"
-# include "minilibx-linux/mlx.h"
+//# include "minilibx-linux/mlx.h"
 
 # define TILE_SIZE 32
 
