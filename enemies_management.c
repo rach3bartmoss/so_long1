@@ -44,7 +44,7 @@ void	init_enemy(t_data *data, t_enemy *enemy, int x, int y)
 	enemy->alive = 1;
 	enemy->frame_delay = 0;
 	enemy->state = 'I';
-	load_enemy_animation(data, &enemy->idle, "enemies/anim2/ghost_idle", 2);
+	load_enemy_animation(data, &enemy->idle, "textures/enemies/ghost_idle", 2);
 	enemy->current_animation = &enemy->idle;
 }
 

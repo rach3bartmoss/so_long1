@@ -45,7 +45,7 @@ $(NAME): $(OBJECTS) $(LIBFT) #this prevents relinking if the object files are up
 	@$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
 valgrind : $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) test2.ber
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) maps/test.ber
 
 clean:
 	rm -f $(OBJECTS)

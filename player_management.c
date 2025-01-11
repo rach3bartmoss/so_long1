@@ -45,11 +45,11 @@ void	init_player(t_data *data)
 	data->player.x = data->map.player_x;
 	data->player.y = data->map.player_y;
 	data->player.state = 'I';
-	init_animation(&data->player.idle, "hero/idle/idle_samurai", 10, data);
-	init_animation(&data->player.run, "hero/run/run_samurai", 8, data);
-	init_animation(&data->player.run_left, "hero/run/run_samurai_L", 8, data);
-	init_animation(&data->player.jump, "hero/jump/jump_samurai", 5, data);
-	init_animation(&data->player.crouch, "hero/crouch/crouch_samurai", 1, data);
+	init_animation(&data->player.idle, "textures/hero/idle_samurai", 10, data);
+	init_animation(&data->player.run, "textures/hero/run_samurai", 8, data);
+	init_animation(&data->player.run_left, "textures/hero/run_samurai_L", 8, data);
+	init_animation(&data->player.jump, "textures/hero/jump_samurai", 5, data);
+	init_animation(&data->player.crouch, "textures/hero/crouch_samurai", 1, data);
 	data->player.current_animation = &data->player.idle;
 }
 
