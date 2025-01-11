@@ -53,11 +53,7 @@ int	read_map_dimensions(t_data *data, char *filename)
 		if (line[ft_strlen(line) - 1] == '\n')
 			line[ft_strlen(line) - 1] = '\0';
 		if (!process_map_line(data, line))
-		{
-			free(line);
-			close(fd);
-			clean_exit(data);
-		}
+			clean_map_loading_helper(data, fd, line);
 		free(line);
 	}
 	close(fd);

@@ -25,10 +25,7 @@
 
 # define TILE_SIZE 32
 
-# define MAX_ENEMIES 10
-
-# define JUMP_FORCE -10
-# define GRAVITY 1
+# define MAX_ENEMIES 50
 
 # define KEY_ESC 65307
 # define KEY_LEFT 65361
@@ -233,5 +230,6 @@ void	initialize_enemies_helper(t_data *data, int *x,
 
 void	print_error_and_exit(char *error_msg, t_data *data);
 void	print_element_errors(t_data *data);
+void	clean_map_loading_helper(t_data *data, int fd, char *line);
 
 #endif
