@@ -27,7 +27,8 @@ LIBFT_DIR = ./libraries/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 MLX_DIR = ./libraries/mlx
-MLX = $(MLX_DIR)/libmlx.
+MLX = $(MLX_DIR)/libmlx.a
+MLX_TGZ = ./libraries/minilibx-linux.tgz
 
 INCLUDES = -I./ -I$(LIBFT_DIR) -I./sources -I$(MLX_DIR) -I/usr/local/include
 LINKS = -L$(MLX_DIR) -L$(LIBFT_DIR) -lmlx -lXext -lX11 -lm
@@ -40,7 +41,12 @@ compile_solong:
 $(LIBFT):
 	@$(MAKE) -s -C $(LIBFT_DIR)
 
-$(MLX):
+$(MLX_DIR):
+	@echo "$(GREEN)Extracting minilibx...$(RESET)"
+	@mkdir -p $(MLX_DIR)
+	@tar -xzf $(MLX_TGZ) -C $(MLX_DIR) --strip-components=1
+
+$(MLX): $(MLX_DIR)
 	@echo "$(GREEN)Compiling minilibx...$(RESET)"
 	@$(MAKE) -s -C $(MLX_DIR) > /dev/null 2>&1
 
@@ -62,7 +68,8 @@ fclean: clean
 	rm -f $(NAME)
 	@$(MAKE) -s -C $(LIBFT_DIR) fclean
 	@$(MAKE) -s -C $(MLX_DIR) clean
+	@rm -rf $(MLX_DIR)
 
 re: fclean all
 
-.PHONY: all clean fclean re valgrind
+.PHONY: all clean fclean re valgrind compile_solong
