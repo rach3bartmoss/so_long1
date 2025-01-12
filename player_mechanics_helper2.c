@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:53:09 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:53:11 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:06:48 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	render_move_count(t_data *data)
 	t_text		text;
 	char		*move_text;
 
+	ft_printf("Moves: %d\n", data->moves);
 	rect.x_start = 0;
 	rect.y_start = 0;
 	rect.width = 100;
