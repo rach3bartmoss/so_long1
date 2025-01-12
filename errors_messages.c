@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:44:26 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 13:35:06 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:09:00 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	clean_map_loading_helper(t_data *data, int fd, char *line)
 void	print_element_errors(t_data *data)
 {
 	if (data->map.exit_count != 1)
-		ft_printf("Error:\nMap must have exactly one exit.\n");
+		ft_printf("Error\nMap must have exactly one exit.\n");
 	if (data->map.player_count != 1)
-		ft_printf("Error:\nMap must have exactly one starting position.\n");
+		ft_printf("Error\nMap must have exactly one starting position.\n");
 	if (data->map.collectibles == 0)
-		ft_printf("Error:\nMap must have at least one collectible.\n");
+		ft_printf("Error\nMap must have at least one collectible.\n");
 }

@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:53:22 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 13:36:20 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:11:23 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_tiles(t_data *data)
 	if (!data->tiles.floor1 || !data->tiles.wall || !data->tiles.wall2
 		|| !data->tiles.exit || !data->tiles.collectible)
 	{
-		ft_printf("Error: Failed to load tiles.\n");
+		ft_printf("Error\nFailed to load tiles.\n");
 		exit(EXIT_FAILURE);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:27 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 13:35:17 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:09:26 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	process_map_line(t_data *data, char *line)
 	else if ((int)ft_strlen(line) != data->map.width
 		&& (int)ft_strlen(line) != 0)
 	{
-		ft_printf("Error:\nLine length are uneven at line %d.\n",
+		ft_printf("Error\nLine length are uneven at line %d.\n",
 			data->map.height + 1);
 		return (0);
 	}
 	if (ft_strlen(line) == 0)
 	{
-		ft_printf("Error: Empty line encountered at line %d.\n",
+		ft_printf("Error\nEmpty line encountered at line %d.\n",
 			data->map.height + 1);
 		return (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:56 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 13:35:32 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:15:47 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	init_animation(t_animation *animation, char *base_path,
 				&data->player.width, &data->player.height);
 		if (!animation->frames[i])
 		{
-			ft_printf("error: failed to load animation frame %d.\n", i + 1);
+			ft_printf("Error\n failed to load animation frame %d.\n", i + 1);
 			exit(EXIT_FAILURE);
 		}
 		i++;

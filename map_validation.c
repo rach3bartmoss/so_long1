@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:39 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 13:35:23 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:08:45 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check_map_borders(t_data *data)
 					|| x == 0 || x == data->map.width - 1)
 				&& data->map.grid[y][x] != '1')
 			{
-				ft_printf("Error:\n Map must be surrounded by walls!\n");
+				ft_printf("Error\nMap must be surrounded by walls!\n");
 				return (0);
 			}
 			x++;
@@ -83,7 +83,7 @@ int	count_map_elements(t_data *data)
 		{
 			c = data->map.grid[y][x];
 			if (!validate_map_chars(ft_toupper(c)))
-				return (ft_printf("Error:\nInvalid character at map[%d][%d]\n",
+				return (ft_printf("Error\nInvalid character at map[%d][%d]\n",
 						(y + 1), (x + 1)));
 			init_map_elements(data, c, y, x);
 			x++;
@@ -105,12 +105,12 @@ int	validate_map(t_data *data)
 	}
 	if (!validate_map_path(data))
 	{
-		ft_printf("Error\n: Map doesn't have a valid path.\n");
+		ft_printf("Error\nMap doesn't have a valid path.\n");
 		return (0);
 	}
 	if (data->map.width == data->map.height)
 	{
-		ft_printf("Error:\nMap are not in a rectangular format\n");
+		ft_printf("Error\nMap are not in a rectangular format\n");
 		return (0);
 	}
 	return (1);

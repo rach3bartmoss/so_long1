@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:53:02 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:53:04 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:10:38 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	handle_keyrelease(int keycode, t_data *data)
 	if (keycode == KEY_RIGHT || keycode == KEY_LEFT
 		|| keycode == KEY_UP || keycode == KEY_DOWN)
 	{
-		ft_printf("entered the key release function inner condition\n");
 		handle_player_state(data, 'I');
 		update_player_animation(data);
 	}
