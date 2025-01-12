@@ -18,7 +18,8 @@ SOURCES = main.c clean_close.c ft_init.c map_loading.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fPIE
+LINK_FLAGS = -pie
 
 GREEN = \033[0;32m
 RESET = \033[0m
@@ -39,7 +40,7 @@ compile_solong:
 	@echo "$(GREEN)Compiling so_long...$(RESET)"
 
 $(LIBFT):
-	@$(MAKE) -s -C $(LIBFT_DIR)
+	@$(MAKE) -s -C $(LIBFT_DIR) CFLAGS="$(FLAGS)"
 
 $(MLX_DIR):
 	@echo "$(GREEN)Extracting minilibx...$(RESET)"
@@ -51,7 +52,7 @@ $(MLX): $(MLX_DIR)
 	@$(MAKE) -s -C $(MLX_DIR) > /dev/null 2>&1
 
 $(NAME): $(OBJECTS) $(LIBFT) $(MLX)#this prevents relinking if the object files are up to date
-	@$(CC) $(OBJECTS) -o $(NAME) $(FLAGS) $(LINKS) $(LIBFT)
+	@$(CC) $(OBJECTS) -o $(NAME) $(FLAGS) $(LINK_FLAGS) $(LINKS) $(LIBFT)
 
 %.o: %.c so_long.h
 	@$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@

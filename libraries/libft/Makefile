@@ -6,7 +6,7 @@
 #    By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 20:59:32 by dopereir          #+#    #+#              #
-#    Updated: 2024/10/25 10:08:14 by dopereir         ###   ########.fr        #
+#    Updated: 2025/01/12 18:57:35 by dopereir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME = libft.a
 
 Sources = $(wildcard *.c)
 
-Compiler = cc $(Flags) -c
+Compiler = cc $(CFLAGS) -c
 
-Flags = -Wall -Wextra -Werror
+CFLAGS ?= -Wall -Wextra -Werror -fPIE
 
 mylib = ar rc $(NAME)
 
