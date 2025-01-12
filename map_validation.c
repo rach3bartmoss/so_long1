@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:39 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 15:08:45 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:39:51 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	count_map_elements(t_data *data)
 {
 	int		x;
 	int		y;
-	char	c;
 
 	data->map.collectibles = 0;
 	data->map.exit_count = 0;
@@ -81,11 +80,13 @@ int	count_map_elements(t_data *data)
 		x = 0;
 		while (x < data->map.width)
 		{
-			c = data->map.grid[y][x];
-			if (!validate_map_chars(ft_toupper(c)))
-				return (ft_printf("Error\nInvalid character at map[%d][%d]\n",
-						(y + 1), (x + 1)));
-			init_map_elements(data, c, y, x);
+			if (!validate_map_chars(ft_toupper(data->map.grid[y][x])))
+			{
+				ft_printf("Error\nInvalid character at map[%d][%d]\n",
+					(y + 1), (x + 1));
+				return (clean_exit(data));
+			}
+			init_map_elements(data, data->map.grid[y][x], y, x);
 			x++;
 		}
 		y++;

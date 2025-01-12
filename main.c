@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:19 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 15:16:43 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:35:51 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,7 @@ int	main(int argc, char **argv)
 		return (ft_printf("Error\nUsage: <program> <map_name.ber>\n"));
 	init_data(&data);
 	if (!load_map(&data, argv[1]) || !validate_map(&data))
-	{
-		perror("Error\nInvalid map\n");
 		return (clean_exit(&data));
-	}
 	init_game(&data);
 	if (!data.mlx || !data.win)
 		return (clean_exit(&data));

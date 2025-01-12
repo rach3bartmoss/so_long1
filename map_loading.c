@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:27 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 15:09:26 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:42:14 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ int	load_map(t_data *data, char *filename)
 	char	*line;
 	int		y;
 
-	if (!read_map_dimensions(data, filename) || !init_map_memory(data))
-		return (0);
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
+		return (perror("Error\nInvalid map\n"), 0);
+	if (!read_map_dimensions(data, filename) || !init_map_memory(data))
 		return (0);
 	y = 0;
 	while (y < data->map.height)
