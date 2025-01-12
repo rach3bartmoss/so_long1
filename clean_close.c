@@ -6,14 +6,11 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:51:07 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:51:12 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:34:50 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minilibx-linux/mlx.h"
 #include "so_long.h"
-#include <mlx.h>
-#include <stdlib.h>
 
 int	clean_exit(t_data *data)
 {

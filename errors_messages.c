@@ -6,13 +6,11 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:44:26 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/08 22:44:29 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:35:06 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries/libft/libft.h"
 #include "so_long.h"
-#include <string.h>
 
 void	print_error_and_exit(char *error_msg, t_data *data)
 {

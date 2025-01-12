@@ -6,17 +6,11 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:19 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:52:21 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:34:23 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minilibx-linux/mlx.h"
 #include "so_long.h"
-#include <complex.h>
-#include <mlx.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
 
 int	game_loop(t_data *data)
 {

@@ -6,14 +6,11 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:56 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:52:58 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:35:32 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries/libft/libft.h"
-#include "minilibx-linux/mlx.h"
 #include "so_long.h"
-#include <stdio.h>
 
 void	init_animation(t_animation *animation, char *base_path,
 	int frame_count, t_data *data)

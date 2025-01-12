@@ -6,11 +6,10 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:27 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:52:29 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:35:17 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries/libft/libft.h"
 #include "so_long.h"
 
 int	process_map_line(t_data *data, char *line)

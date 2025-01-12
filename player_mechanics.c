@@ -6,12 +6,10 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:53:16 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:53:18 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:35:40 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries/libft/libft.h"
-#include "minilibx-linux/mlx.h"
 #include "so_long.h"
 #define MOVE_DELAY 0.03
 

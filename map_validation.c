@@ -6,11 +6,10 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:52:39 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/06 00:55:34 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:35:23 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries/libft/libft.h"
 #include "so_long.h"
 
 int	validate_map_chars(char c)

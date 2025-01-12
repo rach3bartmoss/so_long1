@@ -6,22 +6,22 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:46:49 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/08 22:47:18 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:34:13 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include "mlx.h"
+# include "libraries/mlx/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include <time.h>
-# include <talloc.h>
+# include <complex.h>
+# include <string.h>
 # include "libraries/libft/libft.h"
-//# include "minilibx-linux/mlx.h"
 
 # define TILE_SIZE 32
 

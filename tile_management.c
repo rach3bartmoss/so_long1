@@ -6,15 +6,11 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:53:22 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/05 19:53:24 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:36:20 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries/libft/libft.h"
-#include "minilibx-linux/mlx.h"
 #include "so_long.h"
-#include <complex.h>
-#include <string.h>
 
 void	init_tiles(t_data *data)
 {
