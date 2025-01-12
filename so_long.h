@@ -6,13 +6,13 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:46:49 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 13:34:13 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/12 13:47:08 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include "libraries/mlx/mlx.h"
+# include "mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>

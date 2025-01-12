@@ -7,7 +7,6 @@
 
 NAME = so_long
 
-#SOURCES = $(wildcard sources/*.c)
 SOURCES = main.c clean_close.c ft_init.c map_loading.c \
 			map_validation.c tile_management.c \
 			player_management.c player_mechanics.c \
@@ -27,10 +26,13 @@ RESET = \033[0m
 LIBFT_DIR = ./libraries/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-INCLUDES = -I./ -I$(LIBFT_DIR) -I./sources -I/usr/local/include
-LINKS = -L/usr/local/lib -L$(LIBFT_DIR) -lmlx -lXext -lX11 -lm
+MLX_DIR = ./libraries/mlx
+MLX = $(MLX_DIR)/libmlx.
 
-all: $(LIBFT) compile_solong $(NAME) #this prevents relinking if the executable is up to date
+INCLUDES = -I./ -I$(LIBFT_DIR) -I./sources -I$(MLX_DIR) -I/usr/local/include
+LINKS = -L$(MLX_DIR) -L$(LIBFT_DIR) -lmlx -lXext -lX11 -lm
+
+all: $(LIBFT) $(MLX) compile_solong $(NAME) #this prevents relinking if the executable is up to date
 
 compile_solong:
 	@echo "$(GREEN)Compiling so_long...$(RESET)"
@@ -38,7 +40,11 @@ compile_solong:
 $(LIBFT):
 	@$(MAKE) -s -C $(LIBFT_DIR)
 
-$(NAME): $(OBJECTS) $(LIBFT) #this prevents relinking if the object files are up to date
+$(MLX):
+	@echo "$(GREEN)Compiling minilibx...$(RESET)"
+	@$(MAKE) -s -C $(MLX_DIR) > /dev/null 2>&1
+
+$(NAME): $(OBJECTS) $(LIBFT) $(MLX)#this prevents relinking if the object files are up to date
 	@$(CC) $(OBJECTS) -o $(NAME) $(FLAGS) $(LINKS) $(LIBFT)
 
 %.o: %.c so_long.h
@@ -50,10 +56,12 @@ valgrind : $(NAME)
 clean:
 	rm -f $(OBJECTS)
 	@$(MAKE) -s -C $(LIBFT_DIR) clean
+	@$(MAKE) -s -C $(MLX_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
 	@$(MAKE) -s -C $(LIBFT_DIR) fclean
+	@$(MAKE) -s -C $(MLX_DIR) clean
 
 re: fclean all
 
